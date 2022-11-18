@@ -7,37 +7,50 @@
     tools:context=".Menu_Tab_BarActivity">
 
     <com.google.android.material.tabs.TabLayout
-        android:layout_width="match_parent"
         android:id="@+id/idTabLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <com.google.android.material.tabs.TabItem
+            android:id="@+id/idTabitemPorcoes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/idTabitemPorcoes"
             android:text="Porções" />
 
         <com.google.android.material.tabs.TabItem
+            android:id="@+id/idTabitemBebidas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/idTabitemBebidas"
             android:text="Bebidas" />
 
         <com.google.android.material.tabs.TabItem
+            android:id="@+id/idTabitemLanches"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/idTabitemLanches"
             android:text="Lanches" />
 
     </com.google.android.material.tabs.TabLayout>
 
-    <FrameLayout
-        android:id="@+id/idContainerTabLayout"
+    <include
+        android:id="@+id/fragPorcoes"
+        layout="@layout/fragment_porcoes"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/idTabLayout"
-        android:layout_marginTop="-2dp"
-        android:background="#9F3636" />
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/idTabLayout" />
+
+    <include
+        android:id="@+id/fragBebidas"
+        layout="@layout/fragment_bebidas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fragPorcoes" />
+
+    <include
+        android:id="@+id/fragLanches"
+        layout="@layout/fragment_lanches"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fragBebidas" />
 
 
 </RelativeLayout>
